@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <div class ="body-bg">
+      <img src="../images/bg.jpg" alt="Italian Trulli">
+  </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class ="nav-logo">
+          <img src="../images/white logo.png" alt="coca-cola">
+        </div>
+        <div class = "nav-menu">
+          <a href="admin.html"class="active"><img src="../images/home (1).svg" alt="Italian Trulli"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
+          <a href="add.html"><img src="../images/plus-square.svg" alt="Italian Trulli">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add Product</a>
+          <a href="inventory.html"><img src="../images/shopping-bag.svg" alt="Italian Trulli">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Inventory</a>
+          <a href="sales.html"><img src="../images/database.svg" alt="Italian Trulli">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sales</a>
+        </div>
+        <div class="nav-bg">
+          <img src="../images/background1.png" alt="Italian Trulli">
+        </div>
+      </div>
+
+      <div class = "nav-top">
+      <span style="margin-left: 20px;font-size:50px;cursor:pointer; color: white" onclick="openNav()">&#9776;</span>
+      <a href="../index.html" class="logout">Logout as Admin</a>
+      </div>
+      
+      <hr class="hr1">
+      <div id="dashboard">
+        <h1>Admin Dashboard</h1>
+          <div class = "search">
+            <form action="search.php" method="GET">
+              <input type="text" name="query" placeholder=" ">
+              <button type="submit">Search</button>
+            </form>
+          </div>
+      </div>
+      <hr class="hr2"> 
+      <div class="dash-btn">
+        <a href="add.html"><h1>Add Product&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/plus-circle2.svg"></h1></a>
+        <a href="inventory.html"><h1>Inventory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/shopping-bag2.svg"></h1></a>
+        <a href="sales.html"><h1>Sales&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../images/database2.svg"></h1></a>
+        <a href="today.html"><h1>Today's Transaction<img src="../images/truck.svg"></h1></a>
+      </div>
+      <div class="credited">
+        <h1>Partner Management System</h1>
+        <p>Designed for Educational Purposes Only</p>
+      </div>
+ 
+
+      <script >
+//SIDE-NAV
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "400px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        // Get the current URL
+        var currentUrl = window.location.href;
+
+        // Get all links in the nav-menu
+        var links = document.querySelectorAll('.nav-menu a');
+
+        // Loop through each link
+        links.forEach(function(link) {
+            // Check if the href attribute of the link matches the current URL
+            if (link.getAttribute('href') === currentUrl) {
+                // Add the 'active' class to the link
+                link.classList.add('active');
+            }
+        });
+        
+//SEARCH
+        document.addEventListener("DOMContentLoaded", function() {
+        const searchInput = document.querySelector('.search input');
+
+        // Add event listeners for focus and blur
+        searchInput.addEventListener('focus', function() {
+            // When input field is focused, add class to hide background image
+            this.classList.add('hidden-background');
+        });
+
+        searchInput.addEventListener('blur', function() {
+            // When input field loses focus, remove class to show background image
+            if (!this.value.trim()) { // Check if input field is empty
+                this.classList.remove('hidden-background');
+            }
+        });
+    });
+    window.onload = openNav;
+        </script>
+
+
+</body>
+</html>
