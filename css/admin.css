@@ -264,6 +264,12 @@ table, th, td {
     padding: 8px;
 	text-align: center;	
 }
+table,  input {
+    border: 1px solid #ddd;
+	font-size: 2rem;
+	padding: .5rem;
+	text-align: center;	
+}
 
 th {
     background-color: #000000;
@@ -355,5 +361,20 @@ th {
 }
 .printbtn button{
 	margin-left: 32%;
+	width: 35rem;
+}
+/*pos*/
+.pos-table{
+	display: flex;
+}
+.c-recibo{
+	width: 3%;
+	margin-right: 20%;
+	margin-top: 1%;
+}
+.payment{
+	margin-left: 60%;
+}
+.payment button{
 	width: 35rem;
 }
